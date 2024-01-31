@@ -1,6 +1,8 @@
 const container = document.querySelector('#container');
 const rowsTotal = 16;
 const columnsTotal = rowsTotal;
+const reset = document.querySelector("#reset");
+reset.addEventListener('click', () => location.reload());
 
 for(let row = 1; row <= rowsTotal ; row++) {
     let gridRow = document.createElement('div');
@@ -13,4 +15,8 @@ for(let row = 1; row <= rowsTotal ; row++) {
     container.append(gridRow);
 }
 
-
+container.addEventListener("mouseover", (event) => {
+    let target = event.target;
+    target.style.backgroundColor = "black";
+    console.log(target);
+})
